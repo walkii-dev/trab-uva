@@ -41,7 +41,17 @@
 
 <script setup>
 import CardCurso from './components/CardCurso.vue';
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import axios from 'axios';
+
+onMounted(async () =>{
+  try{
+    const response = await axios.get('http://localhost:3000/cursos');
+    courses.value = response.data
+  }catch(err){
+    erro.value = 'Ocorreu um erro ao carregar os cursos.'
+  }
+});
 
 const userName = ref('')
 const userEmail = ref('')
@@ -67,13 +77,7 @@ function validSignUp() {
 }
 
 
-const courses = ref([
-{ id: 3, title: "Introdução à Malandragem Digital", description: "Como identificar e escapar das armadilhas online mais comuns", hours: 6 },
-{ id: 4, title: "Jogos de Azar Descomplicados", description: "Entenda as mecânicas e riscos por trás de joguinhos como o famoso 'do tigrinho'", hours: 10 },
-{ id: 5, title: "Golpes Clássicos da Internet", description: "Um passeio histórico pelos maiores trambiques já aplicados online (modo museu)", hours: 5 },
-{ id: 6, title: "Segurança contra Estelionato 2.0", description: "Aprenda como a IA pode ser usada tanto para o bem quanto para tentar te enganar", hours: 8 },
-{ id: 7, title: "Sobrevivendo ao Mundo da Malandragem", description: "Técnicas de autodefesa digital e como não cair em ciladas", hours: 7}
-]);
+const courses = ref('');
 </script>
 
 <style scoped>
