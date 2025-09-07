@@ -1,0 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background:color(#E9EDDE);
+    min-height: 98vh;
+}
+
+#app{
+    max-width: 1280px;
+    height: 89.1vh;
+    margin:0 auto;
+    padding: 2rem;
+    font-weight: normal;
+}
