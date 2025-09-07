@@ -63,7 +63,7 @@ function validSignUp() {
   }
 
   erro.value = '';
-  alert("Matrícula feita com sucesso!");
+  alert("Matrícula feita com sucesso! ");
 }
 
 
