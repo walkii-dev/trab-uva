@@ -3,8 +3,6 @@ const props = defineProps({
   course: { type: Object, required: true }
 });
 
-const emit = defineEmits(["enroll"]);
-
 </script>
 
 
@@ -20,11 +18,10 @@ const emit = defineEmits(["enroll"]);
 
 
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 .card{
-    font-family: 'Montserrat',Arial;
+    font-family: 'Montserrat', Arial;
     border: 2px solid #ccc;
     border-radius: 8px;
     padding: 1rem;
